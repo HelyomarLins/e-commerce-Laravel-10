@@ -33,13 +33,77 @@
        <div class="col-3 mb-3">
         <div class="card">
             <img src="{{ asset('images/T-shirt Preta.jpg') }}" class="card-img-top" alt="T-shirt Preta">
+            <div class="card-body">
+                <h6 class="card-title">T-shirt Preta</h6>
+                <a href="#" class="btn btn-sm btn-secondary">Adicionar Item</a>
+            </div>
         </div>
        </div>
-    
+       <div class="col-3 mb-3">
+        <div class="card">
+            <img src="{{ asset('images/T-shirt Preta.jpg') }}" class="card-img-top" alt="T-shirt Preta">
+            <div class="card-body">
+                <h6 class="card-title">T-shirt Preta</h6>
+                <a href="#" class="btn btn-sm btn-secondary">Adicionar Item</a>
+            </div>
+        </div>
+       </div>
+       <div class="col-3 mb-3">
+        <div class="card">
+            <img src="{{ asset('images/T-shirt Preta.jpg') }}" class="card-img-top" alt="T-shirt Preta">
+            <div class="card-body">
+                <h6 class="card-title">T-shirt Preta</h6>
+                <a href="#" class="btn btn-sm btn-secondary">Adicionar Item</a>
+            </div>
+        </div>
+       </div>
+       <div class="col-3 mb-3">
+        <div class="card">
+            <img src="{{ asset('images/T-shirt Preta.jpg') }}" class="card-img-top" alt="T-shirt Preta">
+            <div class="card-body">
+                <h6 class="card-title">T-shirt Preta</h6>
+                <a href="#" class="btn btn-sm btn-secondary">Adicionar Item</a>
+            </div>
+        </div>
+       </div>
+       <div class="col-3 mb-3">
+        <div class="card">
+            <img src="{{ asset('images/T-shirt Preta.jpg') }}" class="card-img-top" alt="T-shirt Preta">
+            <div class="card-body">
+                <h6 class="card-title">T-shirt Preta</h6>
+                <a href="#" class="btn btn-sm btn-secondary">Adicionar Item</a>
+            </div>
+        </div>
+       </div>
+       <div class="col-3 mb-3">
+        <div class="card">
+            <img src="{{ asset('images/T-shirt Preta.jpg') }}" class="card-img-top" alt="T-shirt Preta">
+            <div class="card-body">
+                <h6 class="card-title">T-shirt Preta</h6>
+                <a href="#" class="btn btn-sm btn-secondary">Adicionar Item</a>
+            </div>
+        </div>
+       </div>
+       <div class="col-3 mb-3">
+        <div class="card">
+            <img src="{{ asset('images/T-shirt Preta.jpg') }}" class="card-img-top" alt="T-shirt Preta">
+            <div class="card-body">
+                <h6 class="card-title">T-shirt Preta</h6>
+                <a href="#" class="btn btn-sm btn-secondary">Adicionar Item</a>
+            </div>
+        </div>
+       </div>
+       <div class="col-3 mb-3">
+        <div class="card">
+            <img src="{{ asset('images/T-shirt Preta.jpg') }}" class="card-img-top" alt="T-shirt Preta">
+            <div class="card-body">
+                <h6 class="card-title">T-shirt Preta</h6>
+                <a href="#" class="btn btn-sm btn-secondary">Adicionar Item</a>
+            </div>
+        </div>
+       </div>
     </div>
-
 </div>
-
 </body>
 </html>
 
