@@ -1,4 +1,4 @@
-## Iniciando projeto e-commerce com Laravel1-
+## Iniciando projeto e-commerce com Laravel10
 
 Criando projeto de estudo de e-commerce a partir das aulas do canal TheCoderBr, acompanhar as aulas seguindo os endereços e os commits 
 sempre irão mencionar o endereço e a aula correspondente.
