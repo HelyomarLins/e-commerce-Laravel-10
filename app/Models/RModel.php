@@ -8,24 +8,30 @@ use Illuminate\Database\Eloquent\Model;
 class RModel extends Model
 {
     use HasFactory;
-
-    protected $primarykey = 'id';
-    public $timestemps = true; //Created_at e update_at
+    protected $primaryKey = "id";
+    public $timestamps = true; //created_at e updated_at
     public $incremeting = true;
-    protected $fillable = []; 
+    protected $fillable = [];
 
     public function beforeSave()
     {
         return true;
     }
+
     public function save(array $options = [])
     {
-        try{
+        try {
+
+            if(!$this-> beforeSave()){
+                return false;
+            }
 
             return parent::save($options);
-        }catch(\Exception $e)
-        {
+
+        }catch(\Exception $e){
             throw new \Exception($e->getMessage());
         }
+
     }
 }
+
