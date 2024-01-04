@@ -3,7 +3,7 @@
         @foreach($lista as $prod)
           <div class="col-3 mb-3 d-flex align-items-stretch">
             <div class="card">
-                <img src="{{ asset($prod->foto) }}"class="card-img-top"/>
+                <img src="{{ asset($prod->foto) }}" height="400"  class="card-img-top"/>
                     <div class="card-body">
                         <h6 class="catd-title">{{ $prod->nome }} - R$ {{ $prod->valor }}</h6>
                         <p>{{ $prod->descricao}}</p>
