@@ -20,14 +20,15 @@ return new class extends Migration
             $table->string('estado');
             $table->string('cep');
             $table->string('complemento');
-           
+
             $table->integer('usuario_id')->unsigned();
 
             $table->timestamps();
-            
-            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
+
+            $table->foreign('usuario_id')->references('id')->on('usuarios') ->onDelete('cascade');
         });
     }
+
     /**
      * Reverse the migrations.
      */

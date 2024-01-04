@@ -18,7 +18,6 @@ return new class extends Migration
             $table->decimal('valor', 10,2);
             $table->datetime('dt_item');
 
-
             $table->integer('produto_id')->unsigned();
             $table->integer('pedido_id')->unsigned();
 

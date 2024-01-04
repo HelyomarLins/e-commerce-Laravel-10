@@ -16,13 +16,11 @@ return new class extends Migration
 
             $table->datetime('datapedido');
             $table->string('status', 4);
-            $table->integer('susuario_id')->unsigned();
+            $table->integer('usuario_id')->unsigned();
 
             $table->timestamps();
 
-            $table->foreign('usuario_id')
-            ->references('id')->on('usuarios')
-            ->onDelete('cascade');
+            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade');
         });
     }
 
