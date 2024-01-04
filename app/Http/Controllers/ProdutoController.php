@@ -22,7 +22,7 @@ class ProdutoController extends Controller
     }
 
     public function categoria($idcategoria = 0)
-    {
+        {
         $data = [];
         //SECLECT # FROM CATEGORIAS
         $listaCategorias = Categoria::all();
