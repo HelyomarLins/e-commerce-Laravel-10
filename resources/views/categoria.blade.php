@@ -3,6 +3,7 @@
    <div class="col-2">
        @if(isset($listaCategoria) && count($listaCategoria) > 0)
             <div class="list-group">
+                <a href="{{ route('categoria') }}" class="list-group-item list-group-action @if(0 == $idcategoria ) active @endif">Todas</a>
                  @foreach($listaCategoria as $cat)
                     <a href="{{ route('categoria_por_id', ['idcategoria'=> $cat->id]) }}"
                          class="list-group-item list-group-action @if($cat->id == $idcategoria ) active @endif">
