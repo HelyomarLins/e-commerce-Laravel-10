@@ -18,7 +18,7 @@
          @foreach($cart as $indice => $p)
             <tr>
                 <td>
-                    <a href="{{ route('carrinho_excluir', [ 'indice'=> $indice]) }}" class="btn btn-danger btn-sm">
+                    <a href="{{ route('carrinho_excluir', [ 'indice' => $indice]) }}" class="btn btn-danger btn-sm">
                         <i class="fa fa-trash"></i>
                     </a>
                 </td>

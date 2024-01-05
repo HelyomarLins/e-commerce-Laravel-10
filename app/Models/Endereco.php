@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
-class Categoria extends RModel
+class Endereco extends RModel
 {
- 
+ protected $table = 'enderecos';
+
+ protected $fillable = ['logradouro', 'complemento', 'numero', 'cep','cidade', 'estado'];
 }
