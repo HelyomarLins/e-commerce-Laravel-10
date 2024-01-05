@@ -17,7 +17,7 @@ Criando as dependências de Banco de dados a partir do comando php artisan make:
 Criando o campos do Banco de dados a partir do comando php artisan make:model xxx -m
 Criando os campos nas migrations antes de gerar no banco de dados através do artisan 
 
-- [  Criando rotas de acesso as paginas n](https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=4).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=5)
+- [  Criando rotas de acesso as paginas ](https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=4).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=5)
 
 Criando as rotas para Home , Categorias e Cadastro... Criando arquivos de controle e as Views cadastrar ,carrinho, categoria, layout...  Vamos adicionar os produtos no banco de dados através de migrations e exibir na tela inicial do projeto.
  
@@ -25,6 +25,10 @@ Criando as rotas para Home , Categorias e Cadastro... Criando arquivos de contro
 
  Criando a página de categorias, gravando as categorias no banco de dados e carregando na view categoria
  Carregando os produtos de acordo com sua categoria , imagens e descrição dos produtos.
+
+ - [  Criando carrinho de comparas e suas funcionalidades ](https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=8).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=9).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=10)
+
+ Criando o carrinho de compras e salvar os itens em uma sessão do e-commerce.
 
 
 
