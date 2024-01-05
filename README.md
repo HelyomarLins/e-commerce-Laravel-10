@@ -30,6 +30,13 @@ Criando as rotas para Home , Categorias e Cadastro... Criando arquivos de contro
 
  Criando o carrinho de compras e salvar os itens em uma sessão do e-commerce.
 
+ - [  Criando carrinho de comparas e suas funcionalidades ](https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=11).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=12).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=13)
+
+ Criando a tela de cadastro de usuário para o e-commerce
+ Criando  o item para remover valor do carrinho de compras em laravel
+ Criando a funcionalidade excluir item no carrinho
+ Criando a funcionalidade criar cadastro no DB
+
 
 
 - **[]()**

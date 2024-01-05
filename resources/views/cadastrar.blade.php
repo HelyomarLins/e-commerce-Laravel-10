@@ -1,10 +1,10 @@
 @extends('layout')
 @section('conteudo')
 <div class="col-12">
-    <h1 class="mb-3">Cadastrar cliente</h1>
+    <h2 class="mb-3">Cadastrar cliente</h2>
 </div>
 
-    <form action="{{ route ('cadastrar_cliente') }}" method="POST" class="row">
+    <form action="{{ route ('cadastrar_cliente') }}" method="post" class="row">
         @csrf
         <div class="form-group col-6">
             Nome: <input type="text" name="nome"  id="nome" class="form-control"/>
@@ -19,7 +19,7 @@
         </div>
 
         <div class="form-group col-6">
-            Senha: <input type="password" name="senha"  id="senha" class="form-control"/>
+            Senha: <input type="password" name="password"  id="password" class="form-control"/>
         </div>
 
         <div class="form-group col-8">
@@ -41,7 +41,7 @@
             CEP: <input type="text" name="cep"  id="cep" class="form-control"/>
         </div>
         <div>
-            <input type="submit" value="Cadastar" class="btn btn-success btn-sm col-2 mt-2">
+            <input type="submit" value="Cadastar" class="btn btn-success btn-sm col-1 mt-2">
         </div>
     </form>
 @endsection
