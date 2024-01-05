@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-class Categoria extends RModel
+class Usuario extends RModel
 {
+    //Herdando tabela
     protected $table = 'usuarios';
-    protected $fillable = ['email', 'cpf', 'password', 'none'];
+    //Herdando dados do formulário
+    protected $fillable = ['email', 'login', 'password', 'nome'];
 }
