@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
 use App\Models\Endereco;
+use App\Services\clienteService;
 
 class ClienteController extends Controller
 {
@@ -33,22 +34,18 @@ class ClienteController extends Controller
         $endereco = new Endereco($values);//Podemos passa a variável dentro do construtor
         $endereco->logradouro = $request->input('endereco', '');
 
-        //Gavando os dados com tratamento
-        try
-        {
-            \DB::beginTransaction();//iniciando a transação
-            $usuario->save();// salvar o usuario
-            $endereco->usuario_id = $usuario->id;// relacionamento das tabelas
-            $endereco->save();//Salvar endereço
-            \DB::commit();//Confirmando a transação
+        $clienteService = new clienteService();
+        $result = $clienteService->salvarUsuario($usuario, $endereco);
 
-        }catch(\Exception $e)
-        {
-            //TRatar o erro
-            \DB::rollBack(); //cancelar a transação
-            
-        }
-       
+        //GRavando mensagens no flas da sessaõ
+        $message = $result['message'];
+        $status = $result['status'];
+
+        //ok, Cadastrado com sucesso!
+        //err, Login já cadastrado no sistema
+        $request->session()->flash($status, $message);
+
+     
        return redirect()->route('cadastrar');
     }
 

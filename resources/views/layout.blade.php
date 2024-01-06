@@ -28,6 +28,18 @@
     </nav>
     <div class="container">
         <div class="row">
+        <!-- Verificando o login já esixte e imprimindo mensagem-->
+            @if($message = Session::get('err'))
+                <div class="col-12">
+                    <div class="alert alert-danger"> {{ $message }} </div>
+                </div>
+            @endif
+            <!-- Verificando o login já esixte e imprimindo mensagem-->
+            @if($message = Session::get('ok'))
+                <div class="col-12">
+                    <div class="alert alert-success"> {{ $message }} </div>
+                </div>
+            @endif
             <!--Área de conteudo dos outros arquivos-->
             @yield('conteudo')
         </div>
