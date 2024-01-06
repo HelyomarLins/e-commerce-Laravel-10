@@ -36,6 +36,10 @@ Criando as rotas para Home , Categorias e Cadastro... Criando arquivos de contro
  Criando  o item para remover valor do carrinho de compras em laravel
  Criando a funcionalidade excluir item no carrinho
  Criando a funcionalidade criar cadastro no DB
+ - [  Criando carrinho de comparas e suas funcionalidades ](https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=14).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=15).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=16)
+
+ Corrigindo erros de mascara de CEP e CPF e falha na segurança acrescentando HASH na senha
+ 
 
 
 
