@@ -40,6 +40,14 @@ Criando as rotas para Home , Categorias e Cadastro... Criando arquivos de contro
 
  Corrigindo erros de mascara de CEP e CPF e falha na segurança acrescentando HASH na senha
  
+ - [  Criando tela de login do usuario e suas funcionaluidades ](https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=17).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=15).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=16)
+ 
+ Criando tela de login e suas funcionalidades
+ Criando politicas de autenticação na pasta config tabela auth.php
+ Criando mensagens de usuário logado ou não
+ Crinado mascara para login.(cpf) 
+ Manipular o sistema depois que o usuário esta logado
+ Como alterar uma propriedade direto pelo laravel antes da inserção
 
 
 

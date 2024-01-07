@@ -25,7 +25,7 @@ class ClienteController extends Controller
         //$usuario->cpf = $request->input('cpf', '');
         $usuario->fill($values);//Metodo fill armazena aqenas e todas as infomações setada no fillble
         $usuario->login = $request->input('cpf', '');
-        $usuario->password = $request->input('senha', '');
+        //$usuario->password = $request->input('senha', '');
 
         //Criptografando a senha
         $senha = $request->input('password', '');

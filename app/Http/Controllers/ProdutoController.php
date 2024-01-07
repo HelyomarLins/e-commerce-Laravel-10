@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Categoria;
 use App\Models\Produto;
+use App\Services\VendaService;
 
 class ProdutoController extends Controller
 {
@@ -78,6 +79,15 @@ class ProdutoController extends Controller
                 unset($carrinho[$indice]);
             }
             session(['cart' => $carrinho]);
+            return redirect()->route('ver_carrinho');
+        }
+
+        public function finalizar(Request $request)
+        {
+           $prods = session('cart', [])
+           $vendaService = new vendaService();
+            $vendaService->finalizarVenda();
+           
             return redirect()->route('ver_carrinho');
         }
 
