@@ -48,6 +48,10 @@ Criando as rotas para Home , Categorias e Cadastro... Criando arquivos de contro
  Crinado mascara para login.(cpf) 
  Manipular o sistema depois que o usuário esta logado
  Como alterar uma propriedade direto pelo laravel antes da inserção
+ - [  Criando a tela de consulta do histórico dos pedidos ](https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=21).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=22).(https://www.youtube.com/watch?v=b2uQVxYkRLI&list=PLC7cuCjn9-OWsC2omIZdY4cLm4_WMzwQE&index=23)
+ 
+ Criando a tela de consulta do histórico dos pedidos
+ 
 
 
 
