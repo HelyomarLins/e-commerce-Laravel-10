@@ -31,13 +31,13 @@
             @php $total += $p->valor; @endphp
             @endforeach
         </tbody>
-        <tfoot>
+        <tfooter>
             <tr>
                 <td colspan="5">
                     Total do carrino R$ {{ $total }}
                 </td>
             </tr>
-        </tfoot>
+        </tfooter>
 
     </table>
     <form method="POST" action="{{ route('carrinho_finalizar') }}">

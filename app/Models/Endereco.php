@@ -15,7 +15,7 @@ class Endereco extends RModel
 /* public function setCepAttribute($login)
     {
         //Retirar o ponto e traço do CEP
-        $value = preg_replace('/[0-9]/', '', $cep);
+        $value = preg_replace('/[^0-9]/', '', $cep);
         $this->attributes[ 'cep' ] = $value;
     }*/
 

@@ -15,6 +15,7 @@ class UsuarioController extends Controller
         if($request->isMethod("POST"))
         {
             //Se entrar neste if é porque o usuário clicou no botão LOGAR
+            //Resgatar os dados
             $login = $request->input('login');
             $senha = $request->input('senha');
 

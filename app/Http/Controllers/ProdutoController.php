@@ -84,11 +84,17 @@ class ProdutoController extends Controller
 
         public function finalizar(Request $request)
         {
-           $prods = session('cart', [])
-           $vendaService = new vendaService();
-            $vendaService->finalizarVenda();
-           
-            return redirect()->route('ver_carrinho');
+           $prods = session('cart', []);
+           $vendaService = new VendaService();
+           $result = $vendaService->finalizarVenda($prods, \Auth::user());
+
+           //Se o resultado do status for 'ok'
+           if($result['status'] == 'ok')
+            {   //apagar os dados da sessão cart
+                $request->session()->forget('cart');
+            }
+           $request->session()->flash($result['status'], $result['message']);           
+           return redirect()->route('ver_carrinho');
         }
 
 }

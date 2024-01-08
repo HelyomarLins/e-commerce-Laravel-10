@@ -45,7 +45,7 @@ class Usuario extends RModel implements Authenticatable
    /* public function setLoginAttribute($login)
     {
         //Retirar o ponto e traço do cpf
-        $value = preg_replace('/[0-9]/', '', $login);
+        $value = preg_replace('/[^0-9]/', '', $login);
         $this->attributes[ 'login' ] = $value;
     }*/
 

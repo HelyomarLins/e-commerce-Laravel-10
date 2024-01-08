@@ -36,7 +36,9 @@
         <!-- Verifica se o usuário está logado imprime mens Bem vindo -->
             @if(\Auth::user())
                 <div class="col-12">
-                    <p class="text-rigth">Seja bem vindo,  {{ \Auth::user()-> nome}}  - <a href="{{ route('sair') }}">Sair</a></p>
+                    <p class="text-right">
+                        Seja bem vindo,  {{ \Auth::user()-> nome}}  - <a href="{{ route('sair') }}">Sair</a>
+                    </p>
                 </div>
             @endif
            

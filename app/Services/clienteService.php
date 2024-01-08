@@ -2,27 +2,26 @@
 
 namespace App\Services;
 
-use App\Http\Controllers\Controller;
 use App\Models\Usuario;
 use App\Models\Endereco;
-use log;
+use Log;
 
-class clienteService 
+class ClienteService 
 {
-    public function salvarUsuario(Usuario $usuario, Endereco $endereco)
+    public function salvarUsuario(Usuario $user, Endereco $endereco)
     {
           //Gavando os dados com tratamento
           try
           {
-            //Verificar se já existe login antes de salvar
-            $dbUsuario = Usuario::where('login', $usuario->login)->first();
+            //Verificar se já existe usuario com login antes de salvar
+            $dbUsuario = Usuario::where('login', $user->login)->first();
             if($dbUsuario)
             {
                 return ['status' => 'err', 'message' => 'Login já cadastrado no sistema'];
             }
               \DB::beginTransaction();//iniciando a transação
-              $usuario->save();// salvar o usuario
-              $endereco->usuario_id = $usuario->id;// relacionamento das tabelas
+              $user->save();// salvar o usuario
+              $endereco->usuario_id = $user->id;// relacionamento das tabelas
               $endereco->save();//Salvar endereço
               \DB::commit();//Confirmando a transação
 
