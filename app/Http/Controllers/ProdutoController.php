@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Categoria;
 use App\Models\Produto;
 use App\Services\VendaService;
+use App\Models\Pedido;
 
 class ProdutoController extends Controller
 {
@@ -95,6 +96,23 @@ class ProdutoController extends Controller
             }
            $request->session()->flash($result['status'], $result['message']);           
            return redirect()->route('ver_carrinho');
+        }
+
+
+        public function historico()
+        {
+            $data = [];
+            //Selecionar o usuario que está logado para listar apenas os pedidos dele
+            $idusuario = \Auth::user()->id;
+
+            //Listar os pedidos deste usuario logado em ordem crescente 
+            $listaPedido = Pedido::where('usuario_id', $idusuario)
+                                ->orderBy('datapedido', 'desc')
+                                ->get();
+            
+            $data['lista'] = $listaPedido;
+            
+            return view('compra/historico',$data);
         }
 
 }
