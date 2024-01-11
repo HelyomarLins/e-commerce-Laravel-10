@@ -13,15 +13,22 @@
         </tr>
         @foreach($lista as $ped)
         <tr>
-        <td>{{ Carbon\Carbon::parse($ped->datapedido)->format('d/m/Y H:i') }}</td>
-            <td>{{ $ped->statusDesc() }}</td>
-            <td></td>
+            <td>
+                {{ Carbon\Carbon::parse($ped->datapedido)->format('d/m/Y H:i') }}
+
+            </td>
+            <td>
+                {{ $ped->statusDesc() }}
+            </td>
+            <td>
+                <a href="#" class="btn btn-sm btn-info">
+                    <i class="fas fa-shopping-basket"></i>
+                </a>
+                
+            </td>
         </tr>
         
         @endforeach
     </table>
 </div>
-
-
-
 @endsection
