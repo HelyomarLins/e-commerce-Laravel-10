@@ -21,7 +21,7 @@
                 {{ $ped->statusDesc() }}
             </td>
             <td>
-                <a href="#" class="btn btn-sm btn-info" data-toogle="modal" data-tager="#modalcompra">
+                <a href="#" class="btn btn-sm btn-info infocompra" data-value="{{ $ped->id }}" data-toggle="modal" data-target="#modalcompra">
                     <i class="fas fa-shopping-basket"></i>
                 </a>
                 
@@ -31,7 +31,7 @@
     </table>
 </div>
 
-<div class="modal-fade" id="modalcompra">
+<div class="modal fade" id="modalcompra">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -39,13 +39,14 @@
             </div>
     
             <div class="modal-body">
-                
-             </div>
-            <div class="modarl-footer">
+                <h5>TESTE</h5>
+            </div>
+            <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-secondary">Fechar</button>
                     
             </div>
         </div>
     </div>
 </div>
+
 @endsection
