@@ -1,4 +1,15 @@
 @extends('layout')
+@section('scriptjs')
+<script>
+$(function(){
+    $('.infocompra').on('click', function() {
+    let id = $(this).attr('data-value');
+    $.post('{{ route("compra_detalhes") }}', { idpedido : id }, (result) => {
+        $('#conteudopedido').html(result);
+    });
+});
+})
+</script>
 @section('conteudo')
 
 <div class="col-12">
@@ -31,15 +42,17 @@
     </table>
 </div>
 
-<div class="modal fade" id="modalcompra">
+<div class="#" id="modalcompra">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Detalhes da Compra</h5>
+                <h5 class="modal-title">Detalhes da Compra </h5>
+                
             </div>
     
             <div class="modal-body">
-                <h5>TESTE</h5>
+                <div id="conteudopedido"></div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-sm btn-secondary">Fechar</button>

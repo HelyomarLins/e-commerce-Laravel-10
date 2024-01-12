@@ -115,5 +115,10 @@ class ProdutoController extends Controller
             return view('compra/historico',$data);
         }
 
+        public function detalhes(Request $request)
+        {
+            echo 'Detalhes do produto executado';
+        }
+
 }
 
