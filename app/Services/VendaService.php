@@ -39,7 +39,7 @@ class VendaService
         }catch(\Exception $e){
             \DB::rollBack();
             Log::error("ERRO:VENDA SERVICE", ['message' => $e->getMessage()]);
-            //return [ 'status' => 'err', 'message' => 'Venda não pode ser finalizada'];
+            return [ 'status' => 'err', 'message' => 'Venda não pode ser finalizada'];
         }
     }
 }
