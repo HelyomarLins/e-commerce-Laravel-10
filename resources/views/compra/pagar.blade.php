@@ -1,9 +1,71 @@
 @extends('layout')
 @section('scriptjs')
+<script
+    type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js">
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+function carregar()
+{
+    PagSeguroDirectPayment.setSessionId('{{ $sessionID }}')
+    console.log('{{ $sessionID}}')
+}
+$(function(){
+    carregar();
+
+    $('.ncredito').on('blur', function(){
+        PagSeguroDirectPayment.onSenderHashReady(function(response){
+            if(response.status == 'error'){
+                console.log(response.message);
+                return false
+            }
+            
+            var hash = response.senderHash
+            $('.hashseller').val(hash)
+        })
+    })
+
+    $('.nparcela').on('blur', function(){
+        var bandeira = 'visa';
+        var totalParcelas = $(this).val();
+
+        PagSeguroDirectPayment.getInstalLments({
+            amount : $('.totalfinal').val(),
+            maxIntallmentNoInterest : 2,
+            brand : bandeira,
+            success : function(response){
+                console.log(response);
+            }
+        })
+    })
+})
+</script>
 @endsection
 @section('conteudo')
 
-<form action="">
+<form >
+    @php $total = 0; @endphp
+    @if(isset($cart) && count($cart) > 0)
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Nome</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach($cart as $indice => $p)
+            <tr>
+                <td>{{ $p->nome }}</td>
+                <td>{{ $p->valor }}</td>
+            </tr>
+            @php $total += $p->valor; @endphp
+        @endforeach
+        </tbody>
+    </table>
+    @endif
+    <input type="text" name="hashseller" class="hashseller"/>
     <div class="row">
         <div class="col-4">
             Cartão de Crédito:
@@ -31,7 +93,7 @@
         </div>
         <div class="col-4">
             Valor Total:
-            <input type="text" name="totalfinal" class="totalfinal form-control"/>
+            <input type="text" name="totalfinal" value="{{ $total}}" class="totalfinal form-control"/>
         </div>
         <div class="col-4">
             Valor da Parcela:

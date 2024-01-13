@@ -38,7 +38,6 @@
                 </td>
             </tr>
         </tfooter>
-
     </table>
     <form method="POST" action="{{ route('pagar') }}">
         @csrf

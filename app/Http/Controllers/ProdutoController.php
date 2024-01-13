@@ -9,22 +9,35 @@ use App\Models\Produto;
 use App\Services\VendaService;
 use App\Models\Pedido;
 use App\Models\ItensPedido;
+use PagSeguro\Configuration\Configure;
 class ProdutoController extends Controller
 {
-    public function index(Request $request)
+    private $_configs;
+    public function __construct()
     {
-       $data = [];
+        $this->_configs = new Configure();
+        $this->_configs->setCharset("UTF-8");
+        $this->_configs->setAccountCredentials(env('PAGSEGURO_EMAIL'), env('PAGSEGURO_TOKEN'));
+        $this->_configs->setEnvironment(env('PAGSEGURO_AMBIENTE'));
+        $this->_configs->setLog(true, storage_path('logs/pagseguro_' . date('Ymd') . '.log'));
+    }
+    public function getCredential()
+    {
+        return $this->_configs->getAccountCredentials();
+    }
+    public function index(Request $request){
+        $data = [];
 
-       //Buscar todos os produtos
-       //Select * FROM produtos
-       $listaProdutos = Produto::all();
-       $data['lista'] = $listaProdutos;
+        //Buscar todos os produtos
+        //Select * FROM produtos
+        $listaProdutos = Produto::all();
+        $data['lista'] = $listaProdutos;
 
-       return view('home', $data);
+        return view('home', $data);
     }
 
     public function categoria($idcategoria = 0)
-        {
+    {
         $data = [];
         //SECLECT # FROM CATEGORIAS
         $listaCategorias = Categoria::all();
@@ -65,12 +78,13 @@ class ProdutoController extends Controller
     }
 
     public function verCarrinho(Request $request)
-        {
-            $carrinho = session( 'cart', []);
-            $data = ['cart' => $carrinho ];
+    {
+        //Pegando os dados do carrinho
+        $carrinho = session( 'cart', []);
+        $data = ['cart' => $carrinho ];
 
-            return view('carrinho', $data);
-        }
+        return view('carrinho', $data);
+    }
 
     public function excluirCarrinho($indice, Request $request)
         {
@@ -130,6 +144,16 @@ class ProdutoController extends Controller
     public function pagar(Request $request)
         {
             $data = [];
+
+            $carrinho = session( 'cart', []);
+            $data = ['cart' => $carrinho ];
+
+            $sessionCode = \PagSeguro\Services\Session::create(
+                $this->getCredential()
+            );
+            $IDSession = $sessionCode->getResult();
+            $data['sessionID'] = $IDSession;
+
             return view('compra/pagar', $data);
         }
 
