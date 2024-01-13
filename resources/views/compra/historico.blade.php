@@ -1,17 +1,28 @@
 @extends('layout')
-@section('scriptjs')
+@section('scriptsjs')
 <script>
 $(function(){
-    $('.infocompra').on('click', function() {
-    let id = $(this).attr('data-value');
-    $.post('{{ route("compra_detalhes") }}', { idpedido : id }, (result) => {
-        $('#conteudopedido').html(result);
+    $('a[data-toggle="modal"]').on('click', function(event) {
+        event.preventDefault();
+    $($(this).data('target')).modal('show');
     });
 });
+
+$(function(){
+    $(".infocompra").on('click', function() {
+        //Ao clicar no link com class .infocompra esta função sera executada
+        let id = $(this).attr("data-value")
+        $.post('{{ route("compra_detalhes") }}', { idpedido : id}, (result) =>{
+
+            //Funçãi de callback -- retorno do ajax
+            $('#conteudopedido').html(result)
+
+          });
+    });
 })
 </script>
+@endsection
 @section('conteudo')
-
 <div class="col-12">
     <h2>Minhas Compras</h2>
 </div>
@@ -33,7 +44,7 @@ $(function(){
             </td>
             <td>
                 <a href="#" class="btn btn-sm btn-info infocompra" data-value="{{ $ped->id }}" data-toggle="modal" data-target="#modalcompra">
-                    <i class="fas fa-shopping-basket"></i>
+                    A
                 </a>
                 
             </td>
@@ -41,22 +52,18 @@ $(function(){
         @endforeach
     </table>
 </div>
-
-<div class="#" id="modalcompra">
+<!--Modal Vendas -->
+<div class="modal fade" id="modalcompra">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Detalhes da Compra </h5>
-                
+                <h5 class="modal-title">Detalhes da Compra</h5>
             </div>
-    
             <div class="modal-body">
-                <div id="conteudopedido"></div>
-
+               <div id="conteudopedido"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-sm btn-secondary">Fechar</button>
-                    
+                <button type="button" class="btn btn-sm  btn-secondary" data-dismiss="modal">Fechar</button>
             </div>
         </div>
     </div>

@@ -8,7 +8,7 @@ use App\Models\Categoria;
 use App\Models\Produto;
 use App\Services\VendaService;
 use App\Models\Pedido;
-
+use App\Models\ItensPedido;
 class ProdutoController extends Controller
 {
     public function index(Request $request)
@@ -72,7 +72,7 @@ class ProdutoController extends Controller
             return view('carrinho', $data);
         }
 
-        public function excluirCarrinho($indice, Request $request)
+    public function excluirCarrinho($indice, Request $request)
         {
             $carrinho = session('cart', []);
             if(isset($carrinho[$indice]))
@@ -83,7 +83,7 @@ class ProdutoController extends Controller
             return redirect()->route('ver_carrinho');
         }
 
-        public function finalizar(Request $request)
+    public function finalizar(Request $request)
         {
            $prods = session('cart', []);
            $vendaService = new VendaService();
@@ -99,7 +99,7 @@ class ProdutoController extends Controller
         }
 
 
-        public function historico()
+    public function historico()
         {
             $data = [];
             //Selecionar o usuario que está logado para listar apenas os pedidos dele
@@ -115,9 +115,22 @@ class ProdutoController extends Controller
             return view('compra/historico',$data);
         }
 
-        public function detalhes(Request $request)
+    public function detalhes(Request $request)
         {
-            echo 'Detalhes do produto executado';
+            $idpedido = $request->input('idpedido');
+            
+            $listaItens = ItensPedido::join('produtos', 'produtos.id', '=', 'itens_pedidos.produto_id')
+                        ->where('pedido_id', $idpedido)->get([ 'itens_pedidos.*', 'itens_pedidos.valor as valoritem', 'produtos.*' ]);
+        
+            $data = [];
+            $data['listaItens'] = $listaItens;
+            return view('compra/detalhes', $data);
+        }
+
+    public function pagar(Request $request)
+        {
+            $data = [];
+            return view('compra/pagar', $data);
         }
 
 }
