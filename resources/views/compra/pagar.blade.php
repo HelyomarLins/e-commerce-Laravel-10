@@ -9,6 +9,7 @@ function carregar()
 {
     PagSeguroDirectPayment.setSessionId('{{ $sessionID }}')
     console.log('{{ $sessionID}}')
+
 }
 $(function(){
     carregar();
@@ -17,11 +18,11 @@ $(function(){
         PagSeguroDirectPayment.onSenderHashReady(function(response){
             if(response.status == 'error'){
                 console.log(response.message);
-                return false
+                return false;
             }
             
-            var hash = response.senderHash
-            $('.hashseller').val(hash)
+            var hash = response.senderHash;
+            $('.hashseller').val(hash);
         })
     })
 
@@ -29,9 +30,9 @@ $(function(){
         var bandeira = 'visa';
         var totalParcelas = $(this).val();
 
-        PagSeguroDirectPayment.getInstalLments({
+        PagSeguroDirectPayment.getInstallments({
             amount : $('.totalfinal').val(),
-            maxIntallmentNoInterest : 2,
+            maxInstallmentNoInterest : 2,
             brand : bandeira,
             success : function(response){
                 console.log(response);
@@ -49,9 +50,9 @@ $(function(){
     <table class="table">
         <thead>
             <tr>
-                <th></th>
                 <th>Nome</th>
                 <th>Valor</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -93,7 +94,7 @@ $(function(){
         </div>
         <div class="col-4">
             Valor Total:
-            <input type="text" name="totalfinal" value="{{ $total}}" class="totalfinal form-control"/>
+            <input type="text" name="totalfinal" value="{{ $total }}" class="totalfinal form-control"/>
         </div>
         <div class="col-4">
             Valor da Parcela:

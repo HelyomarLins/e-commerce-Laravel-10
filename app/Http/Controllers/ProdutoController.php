@@ -13,6 +13,7 @@ use PagSeguro\Configuration\Configure;
 class ProdutoController extends Controller
 {
     private $_configs;
+    //Configurações de conecção com o PagSeguro
     public function __construct()
     {
         $this->_configs = new Configure();
@@ -23,6 +24,7 @@ class ProdutoController extends Controller
     }
     public function getCredential()
     {
+        //Id de confirmação de conecção
         return $this->_configs->getAccountCredentials();
     }
     public function index(Request $request){
@@ -147,10 +149,11 @@ class ProdutoController extends Controller
 
             $carrinho = session( 'cart', []);
             $data = ['cart' => $carrinho ];
-
+            //Salvando o Token de acesso para a sessão aberta no PagSeguro
             $sessionCode = \PagSeguro\Services\Session::create(
                 $this->getCredential()
             );
+            
             $IDSession = $sessionCode->getResult();
             $data['sessionID'] = $IDSession;
 
